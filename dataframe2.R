@@ -11,3 +11,5 @@ q5=c(5,5,2,NA,1)
 library(data.table)
 df=data.frame(Manager,Date,Country,Gender,Age,q1,q2,q3,q4,q5)
 View(df)
+df$Age[df$Manager==5]<-"NA"
+View(df)
