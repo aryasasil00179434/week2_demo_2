@@ -12,4 +12,30 @@ library(data.table)
 df=data.frame(Manager,Date,Country,Gender,Age,q1,q2,q3,q4,q5)
 View(df)
 df$Age[df$Manager==5]<-NA
+#or  df$Age[df$Age==99]<-NA
 View(df)
+#Add Col
+df$AgeCategory<-c(10,22,33,44,50)
+#Remove Col
+df_1<-subset(df,select = -Manager)
+#df_1<-subset(df,select = -1)
+View(df_1)
+df<-df[,c(2:11)]
+View(df)
+#To Print rows from 1 to 4 and entr col 
+df[1:4,] 
+df[1:3,1:3]
+#to Print 1 and 3 rows with 1 to 3 colums
+df[c(1,3),1:3]
+#print rows(1,3,5) and columns(2,4)
+df[c(1,3,5),c(2,4)]
+df_3<-df[c(1,3,5),c(2,4)]
+View(df_3)
+#logical Structure
+str(df)
+df<-subset(df,select = -AgeCategory)
+df$Age_Cat[df$Age>=45]<-"Elder"
+df$Age_Cat[df$Age<=25]<-"Young"
+df$Age_Cat[df$Age>26 & df$Age<44]<-"Middle Aged"
+df
+
