@@ -38,4 +38,13 @@ df$Age_Cat[df$Age>=45]<-"Elder"
 df$Age_Cat[df$Age<=25]<-"Young"
 df$Age_Cat[df$Age>26 & df$Age<44]<-"Middle Aged"
 df
-
+df
+df$Age_Cat<-factor(df$Age_Cat,
+                   order=TRUE,
+                   levels=c("Young","Middle Aged","Elder"))
+df
+df$Age_Cat<-Age_Cat
+df
+str(df)
+summary_col<-df$q1+df$q2+df$q3+df$q4+df$q5
+summary_col
